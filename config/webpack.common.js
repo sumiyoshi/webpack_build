@@ -2,9 +2,7 @@ module.exports = {
     output: {
         filename: '[name].bundle.js'
     },
-    plugins: [
-
-    ],
+    plugins: [],
     module: {
         rules: [
             {
@@ -16,6 +14,10 @@ module.exports = {
                         presets: ['@babel/preset-env']
                     }
                 }
+            },
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader'
             }
         ]
     }
