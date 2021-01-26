@@ -1,4 +1,4 @@
-const {merge} = require('webpack-merge');
+const merge = require('webpack-merge');
 const common = require('./config/webpack.common');
 const jquery = require('./config/webpack.jquery');
 
