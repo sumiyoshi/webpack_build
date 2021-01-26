@@ -1,11 +1,11 @@
-const {merge} = require('webpack-merge');
-const common = require('./config/webpack.common');
+const merge = require('webpack-merge');
+const base = require('./config/common/webpack.base');
 
 const path = require('path');
-const basePath = path.resolve(__dirname, '../public/bundle/design');
+const basePath = path.resolve(__dirname, '../public/design');
 
 const entries = {};
-const srcDir = './src/'
+const srcDir = '../src/'
 const glob = require("glob");
 glob.sync('**/*.js', {
     cwd: srcDir
@@ -13,7 +13,7 @@ glob.sync('**/*.js', {
     entries[value] = path.resolve(srcDir, value);
 });
 
-module.exports = merge(common);
+module.exports = merge(base);
 module.exports = merge(module.exports, {
     output: {
         path: basePath

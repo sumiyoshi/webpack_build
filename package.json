@@ -1,16 +1,25 @@
 {
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.7.0",
     "@babel/preset-env": "^7.4.0",
     "babel-loader": "^8.0.0",
     "glob": "^7.1.6",
-    "webpack": "^4",
+    "vue": "^2.6.12",
+    "vue-loader": "^14.2.4",
+    "vue-template-compiler": "^2.6.12",
+    "webpack": "^4.46.0",
     "webpack-cli": "^3",
-    "webpack-merge": "^5.7.3"
+    "webpack-merge": "^4.2.2"
   },
   "scripts": {
-    "build_design_dev": "node_modules/.bin/webpack --config webpack.design.config.js --mode=development",
-    "build_dev": "node_modules/.bin/webpack --config webpack.config.js --mode=development",
-    "build_prod": "node_modules/.bin/webpack --config webpack.config.js --mode=production"
+    "watch": "node_modules/.bin/webpack --config webpack.config.js --watch --mode=development",
+    "watch_design": "node_modules/.bin/webpack --config webpack.design.config.js --watch --mode=development",
+    "dev_build": "node_modules/.bin/webpack --config webpack.config.js --mode=development",
+    "dev_design_build": "node_modules/.bin/webpack --config webpack.design.config.js --mode=development",
+    "build": "node_modules/.bin/webpack --config webpack.config.js --mode=production"
+  },
+  "resolutions": {
+    "minimist": "^1.2.3"
   }
 }
