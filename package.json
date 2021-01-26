@@ -1,4 +1,5 @@
 {
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.7.0",
     "@babel/preset-env": "^7.4.0",
@@ -12,9 +13,13 @@
     "webpack-merge": "^4.2.2"
   },
   "scripts": {
-    "build_design_dev": "node_modules/.bin/webpack --config webpack.design.config.js --mode=development",
     "watch": "node_modules/.bin/webpack --config webpack.config.js --watch --mode=development",
+    "watch_design": "node_modules/.bin/webpack --config webpack.design.config.js --watch --mode=development",
     "dev_build": "node_modules/.bin/webpack --config webpack.config.js --mode=development",
+    "dev_design_build": "node_modules/.bin/webpack --config webpack.design.config.js --mode=development",
     "build": "node_modules/.bin/webpack --config webpack.config.js --mode=production"
+  },
+  "resolutions": {
+    "minimist": "^1.2.3"
   }
 }

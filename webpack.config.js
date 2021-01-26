@@ -1,28 +1,19 @@
 const merge = require('webpack-merge');
-const common = require('./config/webpack.common');
-// const jquery = require('./config/webpack.jquery');
-// module.exports = merge(common, jquery);
+const base = require('./config/common/webpack.base');
+// const jquery = require('./config/common/webpack.jquery');
 
 const path = require('path');
 const base_path = path.resolve(__dirname, '../public/bundle');
 
-
-module.exports = merge(common, {
+//共通の設定をマージ
+module.exports = merge(base, {
     output: {
         path: base_path
-    },
-    entry: {
-        common: [
-            '../src/common/common.js',
-        ],
-        app: [
-            '../src/app.js',
-        ],
-        app_es6: [
-            '../src/app.es6.js'
-        ],
-        app_vue: [
-            '../src/vue/app.js'
-        ]
     }
+})
+
+// 個別の設定ファイルをマージ
+const glob = require("glob");
+glob.sync('./config/default/**/*.config.js').map((value) => {
+    module.exports = merge(module.exports, require(value));
 })
