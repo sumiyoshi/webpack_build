@@ -27,7 +27,7 @@ module.exports = {
                                     },
                                 "useBuiltIns": "usage",
                                 // usageのときは指定が必須
-                                "corejs": 3,
+                                "corejs": 2,
                                 // ポリフィルなどの情報が出力される
                                 // "debug": true
                             }
