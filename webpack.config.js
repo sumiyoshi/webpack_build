@@ -1,12 +1,13 @@
 const merge = require('webpack-merge');
 const common = require('./config/webpack.common');
-const jquery = require('./config/webpack.jquery');
+// const jquery = require('./config/webpack.jquery');
+// module.exports = merge(common, jquery);
 
 const path = require('path');
 const base_path = path.resolve(__dirname, '../public/bundle');
 
-module.exports = merge(common, jquery);
-module.exports = merge(module.exports, {
+
+module.exports = merge(common, {
     output: {
         path: base_path
     },
@@ -20,8 +21,8 @@ module.exports = merge(module.exports, {
         app_es6: [
             '../src/app.es6.js'
         ],
-        app_es6_2: [
-            '../src/app.es6.js'
+        app_vue: [
+            '../src/vue/app.js'
         ]
     }
 })

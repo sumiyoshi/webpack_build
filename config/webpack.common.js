@@ -20,5 +20,8 @@ module.exports = {
                 loader: 'vue-loader'
             }
         ]
+    },
+    resolve: {
+        extensions: ['.js', '.vue']
     }
 };
