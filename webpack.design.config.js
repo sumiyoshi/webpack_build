@@ -8,9 +8,10 @@ const entries = {};
 const srcDir = '../src/'
 const glob = require("glob");
 glob.sync('**/*.js', {
-    cwd: srcDir
+    cwd: srcDir,
+    ignore: ['vendor/*.js']
 }).map((value) => {
-    entries[value] = path.resolve(srcDir, value);
+    entries[value.replace(/.js/, '')] = path.resolve(srcDir, value);
 });
 
 module.exports = merge(base);
